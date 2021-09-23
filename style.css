@@ -136,9 +136,8 @@ button {
 }
 
 .budget-dashboard #income .input,
-.budget-dashboard #outcome .input,
-.budget-dashboard #all .input {
-  position: absolute;
+.budget-dashboard #outcome .input {
+  position: fixed;
   bottom: 0;
   width: 360px;
   border-top: 1px solid rgba(109, 109, 109, 0.5);
@@ -146,19 +145,18 @@ button {
   flex-direction: column;
   padding-top: 10px;
   padding-left: 30px;
+  padding-bottom: 10px;
 }
 
 .budget-dashboard #income .input label,
-.budget-dashboard #outcome .input label,
-.budget-dashboard #all .input label {
+.budget-dashboard #outcome .input label {
   font-size: 0.9rem;
   color: #6d6d6d;
   margin-bottom: 3px;
 }
 
 .budget-dashboard #income .input #income-title-input,
-.budget-dashboard #outcome .input #outcome-title-input,
-.budget-dashboard #all .input #all-title-input {
+.budget-dashboard #outcome .input #outcome-title-input {
   width: 300px;
   padding: 5px 10px;
   margin-bottom: 7px;
@@ -167,8 +165,7 @@ button {
 }
 
 .budget-dashboard #income .input #income-amount-input,
-.budget-dashboard #outcome .input #outcome-amount-input,
-.budget-dashboard #all .input #all-amount-input {
+.budget-dashboard #outcome .input #outcome-amount-input {
   padding: 5px 10px;
   width: 200px;
   border: 1px solid rgba(109, 109, 109, 0.5);
@@ -176,8 +173,7 @@ button {
 }
 
 .budget-dashboard #income .input .button-income,
-.budget-dashboard #outcome .input .button-outcome,
-.budget-dashboard #all .input .button-all {
+.budget-dashboard #outcome .input .button-outcome {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -189,9 +185,7 @@ button {
 .budget-dashboard #income .input .add-income,
 .budget-dashboard #income .input .cancel-income,
 .budget-dashboard #outcome .input .add-outcome,
-.budget-dashboard #outcome .input .cancel-outcome,
-.budget-dashboard #all .input .add-all,
-.budget-dashboard #all .input .cancel-all {
+.budget-dashboard #outcome .input .cancel-outcome {
   cursor: pointer;
   width: 100px;
   padding: 7px 0;
@@ -251,10 +245,23 @@ button {
   display: none;
 }
 
-.budget-dashboard #income ul.list li .icons .edit,
-.budget-dashboard #outcome ul.list li .icons .edit,
-.budget-dashboard #all ul.list li .icons .edit {
+.budget-dashboard #income ul.list li:hover .icons,
+.budget-dashboard #outcome ul.list li:hover .icons,
+.budget-dashboard #all ul.list li:hover .icons {
   display: inline-block;
+}
+
+.budget-dashboard #income ul.list li .icons .edit,
+.budget-dashboard #outcome ul.list li .icons .edit {
+  display: inline-block;
+  cursor: pointer;
+  border: 0.1rem solid rgba(109, 109, 109, 0.8);
+  padding: 1px 5px;
+  border-radius: 50%;
+}
+
+.budget-dashboard #all ul.list li .icons .edit {
+  display: none;
 }
 
 .budget-dashboard #income ul.list li .icons .delete,
@@ -262,4 +269,13 @@ button {
 .budget-dashboard #all ul.list li .icons .delete {
   display: inline-block;
   margin-left: 3px;
+  cursor: pointer;
+  border: 0.1rem solid rgba(109, 109, 109, 0.8);
+  padding: 1px 5px;
+  border-radius: 50%;
+}
+
+.budget-dashboard ul.list li .outcome .desc,
+.outcome .li-value {
+  color: #bb6649;
 }
